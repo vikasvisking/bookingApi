@@ -53,7 +53,7 @@ class MatchViewSet(viewsets.ModelViewSet):
 
 	def create(self, request):
 		'''
-		TO parse the incoming request and create the new matchor update existing match odds. 
+		TO parse the incoming request and create the new match or update existing match odds. 
 		'''
 
 		message = request.data.pop('message_type')
@@ -87,4 +87,5 @@ class MatchViewSet(viewsets.ModelViewSet):
 
 		else:
 			return Response(status = status.HTTP_400_BAD_REQUEST)
+
 

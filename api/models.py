@@ -13,7 +13,7 @@ class Market(models.Model):
 	sports = models.ForeignKey(Sports, related_name = 'market', on_delete = models.CASCADE)
 
 	def __str__(self):
-		return self.name + ' | ' + self.sport.name
+		return self.name + ' | ' + self.sports.name
 
 class Selection(models.Model):
 	name = models.CharField(max_length = 100)

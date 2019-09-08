@@ -12,7 +12,7 @@ class SelectionSerializer(serializers.ModelSerializer):
 		fields = ('id', 'name', 'odds')
 
 class MarketSerializer(serializers.ModelSerializer):
-	Selection = SelectionSerializer()
+	selections = SelectionSerializer(read_only= True)
 	class Meta:
 		model = Market
 		fields = ('id', 'name', 'selections')
@@ -25,6 +25,7 @@ class MatchListSerializer(serializers.ModelSerializer):
 class MatchDetailSerializer(serializers.ModelSerializer):
 	sport = SportSerializer()
 	market = MarketSerializer()
+
 	class Meta:
 		model = Match
 		fields = ('id', 'url', 'name', 'startTime', 'sport', 'market' )
